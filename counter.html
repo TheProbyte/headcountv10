@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Headcount · Counter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">◖</div>
+        <div>
+          <h1>HEADCOUNT</h1>
+          <p>CHURCH ATTENDANCE COUNTING</p>
+        </div>
+      </div>
+      <a class="settings-btn" href="settings.html" aria-label="settings">⚙<span>SETTINGS</span></a>
+    </header>
+
+    <a class="back-link" href="index.html">← BACK TO MENU</a>
+
+    <main class="card counter-screen" id="tapTarget">
+      <div class="location-icon">✝</div>
+      <h2>WORSHIP CENTER</h2>
+      <p>Main Auditorium</p>
+      <div class="counter-number" id="counterValue">312</div>
+      <p class="hint">TAP ANYWHERE TO INCREMENT</p>
+      <small>Hold for 3 seconds to enter a number</small>
+      <hr/>
+      <div class="counter-meta">
+        <span>LAST TAP: <strong id="lastTap">NOW</strong></span>
+        <span>RECENT: <strong id="recent">312, 310, 307, 305, 304</strong></span>
+      </div>
+    </main>
+
+    <p class="motto">← SWIPE RIGHT TO RETURN • • •</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Headcount · Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">◖</div>
+        <div>
+          <h1>HEADCOUNT</h1>
+          <p>CHURCH ATTENDANCE COUNTING</p>
+        </div>
+      </div>
+      <a class="settings-btn" href="settings.html" aria-label="settings">⚙<span>SETTINGS</span></a>
+    </header>
+
+    <section class="service-picker">
+      <h2>SERVICE TIME</h2>
+      <div class="picker-control">
+        <button id="prevService">‹</button>
+        <div id="serviceLabel">11:30 AM SERVICE</div>
+        <button id="nextService">›</button>
+      </div>
+    </section>
+
+    <main class="card stack-gap">
+      <section class="summary">
+        <div>
+          <h3>TOTAL ATTENDANCE</h3>
+          <div class="total" id="totalCount">487</div>
+        </div>
+        <div class="church-art" aria-hidden="true">✝</div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h3>LOCATIONS</h3>
+          <span>7 LOCATIONS</span>
+        </div>
+        <div id="locationList"></div>
+        <button class="add-btn" id="addLocation">＋ ADD LOCATION</button>
+      </section>
+    </main>
+
+    <footer class="bottom-actions card">
+      <button class="ghost">COPY REPORT</button>
+      <button class="accent" id="resetAll">RESET ALL</button>
+      <div class="updated">Last updated<br><strong id="updatedAt">May 24, 2025 11:32 AM</strong></div>
+    </footer>
+
+    <p class="motto">✚ COUNT WELL. SERVE FAITHFULLY.</p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
