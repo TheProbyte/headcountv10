@@ -13,17 +13,21 @@ const defaultLocations = [
 
 const state = loadState();
 
+function cloneLocations(list) {
+  return list.map((item) => ({ ...item }));
+}
+
 function loadState() {
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
     return {
       serviceIndex: Number.isInteger(stored.serviceIndex) ? stored.serviceIndex : 1,
-      locations: Array.isArray(stored.locations) && stored.locations.length ? stored.locations : structuredClone(defaultLocations),
+      locations: Array.isArray(stored.locations) && stored.locations.length ? stored.locations : cloneLocations(defaultLocations),
       updatedAt: stored.updatedAt || 'May 24, 2025 11:32 AM',
       recent: Array.isArray(stored.recent) && stored.recent.length ? stored.recent : [312, 310, 307, 305, 304],
     };
   } catch {
-    return { serviceIndex: 1, locations: structuredClone(defaultLocations), updatedAt: 'May 24, 2025 11:32 AM', recent: [312, 310, 307, 305, 304] };
+    return { serviceIndex: 1, locations: cloneLocations(defaultLocations), updatedAt: 'May 24, 2025 11:32 AM', recent: [312, 310, 307, 305, 304] };
   }
 }
 
@@ -119,7 +123,9 @@ function attachCounter() {
   if (recent) recent.textContent = state.recent.join(', ');
 
   let pressTimer;
+  let longPressTriggered = false;
   const enterManual = () => {
+    longPressTriggered = true;
     const manual = prompt('Enter count', String(locationEntry.count));
     if (manual === null) return;
     const value = Number.parseInt(manual, 10);
@@ -144,19 +150,28 @@ function attachCounter() {
   };
 
   const startPress = () => {
+    longPressTriggered = false;
     clearTimeout(pressTimer);
     pressTimer = setTimeout(enterManual, 3000);
   };
 
   const cancelPress = () => clearTimeout(pressTimer);
 
-  target.addEventListener('click', bump);
-  target.addEventListener('touchstart', startPress, { passive: true });
-  target.addEventListener('touchend', cancelPress);
-  target.addEventListener('touchcancel', cancelPress);
-  target.addEventListener('mousedown', startPress);
-  target.addEventListener('mouseup', cancelPress);
-  target.addEventListener('mouseleave', cancelPress);
+  const commitTap = () => {
+    if (longPressTriggered) {
+      longPressTriggered = false;
+      return;
+    }
+    bump();
+  };
+
+  target.addEventListener('pointerdown', startPress);
+  target.addEventListener('pointerup', () => {
+    cancelPress();
+    commitTap();
+  });
+  target.addEventListener('pointercancel', cancelPress);
+  target.addEventListener('pointerleave', cancelPress);
 }
 
 refreshDashboard();
