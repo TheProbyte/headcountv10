@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Headcount · Settings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">◖</div>
+        <div>
+          <h1>HEADCOUNT</h1>
+          <p>CHURCH ATTENDANCE COUNTING</p>
+        </div>
+      </div>
+      <a class="settings-btn" href="settings.html" aria-label="settings">⚙<span>SETTINGS</span></a>
+    </header>
+
+    <section class="service-picker">
+      <h2>SETTINGS</h2>
+      <div class="picker-control">
+        <button onclick="location.href='index.html'">‹</button>
+        <div>SETTINGS</div>
+        <button onclick="location.href='counter.html'">›</button>
+      </div>
+    </section>
+
+    <main class="card stack-gap">
+      <section>
+        <h3 class="prefs-title">PREFERENCES</h3>
+        <div class="setting-row"><label>HAPTICS / VIBRATION</label><input type="checkbox" checked></div>
+        <div class="setting-row"><label>KEEP SCREEN AWAKE</label><input type="checkbox" checked></div>
+        <div class="setting-row"><label>CONFIRM BEFORE RESET</label><input type="checkbox" checked></div>
+        <div class="setting-row"><label>MANUAL INPUT HOLD TO DECREMENT</label><input type="checkbox"></div>
+      </section>
+
+      <section>
+        <h3 class="prefs-title">SERVICE & TIME</h3>
+        <div class="setting-row"><label>DEFAULT SERVICE TIME</label><button class="chip">11:30 AM SERVICE</button></div>
+        <div class="setting-row"><label>SERVICE TIME FORMAT</label><div class="group"><button class="chip active">12-HOUR</button><button class="chip">24-HOUR</button></div></div>
+        <div class="setting-row"><label>MANUAL INPUT HOLD DURATION</label><div class="group"><button class="chip">0.5s</button><button class="chip active">1.0s</button><button class="chip">1.5s</button><button class="chip">2.0s</button></div></div>
+      </section>
+    </main>
+
+    <footer class="card legal">
+      <div>
+        <strong>HEADCOUNT</strong>
+        <p>Church Attendance Counting</p>
+        <p>Count well. Serve faithfully.</p>
+      </div>
+      <div>
+        <p>Version 1.2.0</p>
+        <p>© 2025 Headcount Co.</p>
+      </div>
+    </footer>
+
+    <p class="motto">✚ COUNT WELL. SERVE FAITHFULLY.</p>
+  </div>
+</body>
+</html>

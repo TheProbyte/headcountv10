@@ -1,0 +1,65 @@
+:root{
+  --bg:#17130f;
+  --paper:#efe8d8;
+  --olive:#737a5a;
+  --rust:#b35a35;
+  --ink:#1a1a18;
+  --muted:#7e7a6b;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,sans-serif;background:radial-gradient(circle at 30% 20%,#2a2118 0,#17130f 45%,#110f0c 100%);color:var(--paper)}
+.app-shell{max-width:980px;margin:20px auto;padding:16px}
+.topbar{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid #9a927d66;padding-bottom:14px;margin-bottom:18px}
+.brand{display:flex;gap:16px;align-items:center}
+.brand-mark{font-size:48px;background:#c3653f;color:#efe8d8;padding:.2em .35em;border-radius:2px;line-height:.8}
+.brand h1{margin:0;font-family:Oswald,sans-serif;font-size:92px;letter-spacing:6px;font-weight:400;line-height:1}
+.brand p{margin:6px 0 0;color:var(--rust);letter-spacing:4px;font-weight:600}
+.settings-btn{display:flex;flex-direction:column;align-items:center;gap:8px;border:2px solid #8c8b70;border-radius:16px;color:#d8d4c5;text-decoration:none;padding:16px 20px;font-size:38px}
+.settings-btn span{font-size:34px;letter-spacing:3px;font-family:Oswald}
+.service-picker h2,.prefs-title{text-align:center;font-family:Oswald;letter-spacing:4px;color:#8b8a74;font-weight:400;margin:0 0 8px;font-size:44px}
+.picker-control{display:flex;background:#787f5f;padding:8px;border-radius:60px;align-items:center;gap:8px;max-width:760px;margin:0 auto 18px}
+.picker-control button{border:none;background:transparent;color:#eae8dc;font-size:56px;padding:0 18px;cursor:pointer}
+.picker-control div{flex:1;background:var(--paper);color:var(--ink);border-radius:50px;text-align:center;font-family:Oswald;letter-spacing:3px;padding:12px 16px;font-size:56px}
+.card{background:var(--paper);color:var(--ink);border-radius:20px;padding:24px;box-shadow:inset 0 0 0 1px #cbc1ad}
+.stack-gap{display:flex;flex-direction:column;gap:20px}
+.summary{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #d8cfbe;padding-bottom:14px}
+.summary h3,.section-head h3{font-family:Oswald;letter-spacing:3px;color:var(--rust);margin:0;font-size:38px;font-weight:400}
+.total{font-size:170px;font-weight:700;line-height:.9}
+.church-art{font-size:180px;color:#8d9472;opacity:.8;padding-right:40px}
+.section-head{display:flex;justify-content:space-between;align-items:center;color:#8f8b7f;font-family:Oswald;letter-spacing:2px}
+.location-row{display:grid;grid-template-columns:12px 72px 1fr auto auto;align-items:center;border:1px solid #d2c8b5;border-radius:18px;margin-bottom:10px;overflow:hidden;background:#f3ecdd}
+.location-row .bar{height:100%}
+.location-row .icon{font-size:28px;text-align:center;color:#7c7f63}
+.location-row .name{padding:16px 8px}
+.location-row .name strong{display:block;font-family:Oswald;font-size:44px;letter-spacing:2px}
+.location-row .name span{font-size:40px;color:#7e7a6f}
+.location-row .count{font-family:Oswald;font-size:84px;padding:0 16px;color:var(--rust)}
+.location-row .open{border:1px solid #c9c0ad;border-radius:12px;padding:8px 14px;margin-right:10px;text-decoration:none;color:#7f7a68;font-size:44px}
+.add-btn{width:100%;margin-top:8px;background:transparent;border:2px dashed #a9a08f;border-radius:14px;padding:16px;font-family:Oswald;letter-spacing:3px;color:#808067;font-size:46px}
+.bottom-actions{margin-top:16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;align-items:center}
+.bottom-actions button{padding:14px 10px;border-radius:12px;font-family:Oswald;letter-spacing:2px;font-size:38px;border:2px solid #9b8f79;background:#ece4d3;color:#6f7158}
+.bottom-actions .accent{background:var(--rust);color:#f5ebde;border-color:#8f4528}
+.updated{font-size:32px;color:#666458}
+.updated strong{font-size:30px}
+.motto{text-align:center;font-family:Oswald;letter-spacing:6px;color:#8d8a6f;font-size:42px}
+.back-link{display:block;text-align:center;text-decoration:none;color:#8c8a71;font-family:Oswald;letter-spacing:3px;font-size:52px;margin:8px 0 20px}
+.counter-screen{text-align:center;min-height:1200px}
+.location-icon{font-size:86px;color:var(--rust)}
+.counter-screen h2{font-family:Oswald;letter-spacing:3px;font-size:90px;margin:8px 0}
+.counter-screen p{margin:0;color:#757663;font-size:56px}
+.counter-number{font-size:420px;line-height:1;color:var(--rust);font-family:Oswald}
+.hint{color:var(--rust)!important;letter-spacing:3px;font-family:Oswald;margin-top:12px!important}
+.counter-screen small{font-size:48px;color:#7a7b66}
+.counter-screen hr{margin:22px 0;border:none;border-top:1px solid #d0c6b2}
+.counter-meta{display:flex;justify-content:space-between;font-size:34px;color:#7d7b6f}
+.setting-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #ddd2be}
+.setting-row label{font-family:Oswald;letter-spacing:2px;font-size:42px}
+input[type="checkbox"]{width:70px;height:36px;accent-color:var(--olive)}
+.chip{border:1px solid #c4b8a2;background:#ece4d4;color:#666353;border-radius:20px;padding:8px 16px;font-family:Oswald;letter-spacing:1px;font-size:32px}
+.group{display:flex;gap:6px}
+.chip.active{background:var(--olive);color:#ece5d4}
+.legal{display:flex;justify-content:space-between;margin-top:16px;color:#43433d}
+.legal p{margin:.25rem 0}
+@media (max-width:900px){
+  .brand h1{font-size:54px}.settings-btn span{font-size:16px}.picker-control div{font-size:30px}.total{font-size:90px}.location-row .name strong{font-size:28px}.location-row .count{font-size:50px}.counter-number{font-size:220px}
+}
